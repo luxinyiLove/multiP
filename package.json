@@ -16,7 +16,6 @@
   },
   "scripts": {
     "dev": "gulp",
-    "why":"why",
     "mock": "json-server ./src/mock/mock.js -r ./src/mock/route.json"
   },
   "dependencies": {},
