@@ -767,3 +767,8 @@ a {
         font-size: .20rem; }
       .home-container ul li.active {
         color: orange; }
+
+.topbar {
+  width: 100%;
+  height: 0.42rem;
+  background-color: red; }

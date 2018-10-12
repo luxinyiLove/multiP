@@ -15,10 +15,13 @@ Router.prototype.route = function(hash,cb){
 
 //路由刷新
 Router.prototype.refresh = function(){
-    let hash = location.hash || "#main";
-    this.currentHash = hash;
-    this.routes[this.currentHash]();
-    this.switchTabbar();
+    if(location.hash != "##"){
+        let hash = location.hash || "#main";
+        this.currentHash = hash;
+        this.routes[this.currentHash]();
+        this.switchTabbar();
+    }
+    
 }
 
 //switchTabbar

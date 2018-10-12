@@ -9,7 +9,7 @@ import mineController from "./controllers/mine";
 homeController.render();
 
 const router = new Router();
-router.init();
+router.init();  
 router.route("#main",mainController.render);
 router.route("#classify",classifyController.render);
 router.route("#member",memberController.render);
