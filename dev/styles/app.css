@@ -738,7 +738,8 @@ a {
     -webkit-flex: 1;
     flex: 1;
     width: .1px;
-    background-color: #ccc; }
+    background-color: #fff;
+    overflow-y: scroll; }
   .home-container ul {
     width: 100%;
     height: .44rem;
@@ -766,9 +767,149 @@ a {
       .home-container ul li i {
         font-size: .20rem; }
       .home-container ul li.active {
-        color: orange; }
+        color: #ff712b; }
+      .home-container ul li p {
+        font-size: .12rem; }
 
-.topbar {
-  width: 100%;
-  height: 0.42rem;
-  background-color: red; }
+.main {
+  position: relative; }
+  .main .topbar {
+    width: 100%;
+    height: 0.42rem;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 0 .05rem 0 .17rem; }
+    .main .topbar .location {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      color: #555; }
+      .main .topbar .location span {
+        margin-left: .1rem; }
+      .main .topbar .location i:nth-of-type(2) {
+        color: #ccc;
+        margin-left: .13rem; }
+    .main .topbar .search {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center; }
+      .main .topbar .search i {
+        margin-right: .17rem;
+        font-size: .2rem;
+        font-weight: bold;
+        color: #777; }
+      .main .topbar .search img {
+        border-radius: 50%;
+        width: .24rem;
+        border: 1px solid #ddd; }
+  .main .banner .banner-title {
+    height: 0.4rem; }
+    .main .banner .banner-title div {
+      height: 100%;
+      float: left;
+      margin: 0 .17rem;
+      line-height: .4rem;
+      position: relative; }
+      .main .banner .banner-title div img:nth-of-type(1) {
+        position: absolute;
+        top: 0;
+        left: .2rem;
+        width: 0.42rem; }
+      .main .banner .banner-title div.active {
+        color: #ff8143;
+        border-bottom: .02rem solid #ff8143; }
+  .main .banner .swiper-container img {
+    width: 3.75rem; }
+  .main .menu {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: flex-start;
+    align-content: flex-start; }
+    .main .menu a {
+      width: 20%;
+      margin-top: .1rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center; }
+      .main .menu a img {
+        width: 100%; }
+      .main .menu a span {
+        color: #888;
+        font-size: .12rem; }
+  .main .advertising {
+    margin-top: .13rem;
+    border-top: .02rem solid #f3f3f3; }
+    .main .advertising img {
+      width: 100%; }
+  .main .promotion {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    border-top: .02rem solid #f6f6f6; }
+    .main .promotion a {
+      width: 33.33%; }
+    .main .promotion img {
+      width: 100%; }
+  .main .theme {
+    background-color: #f6f6f6; }
+    .main .theme > img {
+      width: 100%; }
+    .main .theme .theme-img {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex; }
+      .main .theme .theme-img > a {
+        width: 50%; }
+        .main .theme .theme-img > a > img {
+          width: 100%; }
+      .main .theme .theme-img div {
+        width: 50%; }
+        .main .theme .theme-img div > a > img {
+          width: 100%; }
+  .main .supermarket {
+    background-color: #f6f6f6; }
+    .main .supermarket > img {
+      width: 100%; }
+    .main .supermarket .market-list {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-align-content: flex-start;
+      align-content: flex-start;
+      width: 100%; }
+      .main .supermarket .market-list > a {
+        width: 33.333%; }
+        .main .supermarket .market-list > a > img {
+          width: 100%; }

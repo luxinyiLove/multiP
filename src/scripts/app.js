@@ -15,3 +15,4 @@ router.route("#classify",classifyController.render);
 router.route("#member",memberController.render);
 router.route("#cart",cartController.render);
 router.route("#mine",mineController.render);
+

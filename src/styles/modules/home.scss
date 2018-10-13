@@ -8,7 +8,8 @@
     .main{
         width: 100% !important;
         @include flex();
-        background-color: #ccc;
+        background-color: #fff;
+        overflow-y: scroll;
     }
     ul{
         width: 100%;
@@ -26,7 +27,10 @@
             font-size:.20rem;
            }
            &.active{
-                color:orange;
+                color:#ff712b;
+           }
+           p{
+               font-size:.12rem;
            }
         }
     }
