@@ -9,6 +9,8 @@
         width: 100% !important;
         @include flex();
         background-color: #ccc;
+        overflow-y: scroll;
+        background-color: #fff;
     }
     ul{
         width: 100%;
@@ -17,6 +19,7 @@
         margin-bottom: .05rem;
         @include flexbox();
         @include justify-content(space-around);
+        background-color: #fff;
         li{
            @include flexbox();
            @include flex-direction(column);
@@ -27,6 +30,10 @@
            }
            &.active{
                 color:orange;
+                color:#ff712b;
+           }
+           p{
+               font-size:.12rem;
            }
         }
     }

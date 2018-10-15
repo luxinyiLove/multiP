@@ -1,3 +1,4 @@
+
 const gulp = require("gulp");
 const server = require("gulp-webserver");
 const sass = require("gulp-sass");
@@ -45,10 +46,18 @@ gulp.task("server",()=>{
 				proxy("/api",{
 					target:"http://localhost:3000",
 					changeOrigin:true,
+				}),
+				proxy("/business",{
+					target:"https://wxcmsapi.dmall.com/weixin/home",
+					changeOrigin:true
 					// pathRewrite:{
 					// 	"^/api":""//将api置为空，虽然访问到/api时，就指定代理地址，但目标地址，并没有/api这个路由
 					// 	//所以需要去掉，如果目标地址带有/api路由，则不需要将它置为空
 					// }
+				}),
+				proxy("/businessIndex",{
+					target:"https://wxcmsapi.dmall.com/weixin/home",
+					changeOrigin:true
 				})
 			]
 		}));
@@ -103,3 +112,4 @@ gulp.task("watch",()=>{
 gulp.task("default",["packScss","packJs","copyHtml","copyImages","copyIconfont","copyLibs","server","watch"],()=>{
 	console.log("successful");
 })
+
