@@ -88,18 +88,24 @@ const operateNum = ()=>{
     $(".sub").on("tap",function(){
         var numEl = $(this).next();
         var numVal = Number($(this).next().text());
+        var _this = $(this);
         if(numVal<=1){
-            // 当前数量为1提示是否要进行删除?
-            // var a = layer.open({
-            //     title: '添加提示',
-            //     content: "成功添加商品"
-            // });
-            // console.log(a);
-            // if(localStorage.length<=1){
-            //     $(".pro-list").css("display","none");
-            //     $(".has-selected").css("display","none");
-            //     $(".no-product").css("display","flex");
-            // }
+            layer.open({
+                content:"是否删除该商品?",
+                btn: ['删除','取消'], //按钮
+                btn1:function(){
+                    layer.msg('删除成功',{
+                        time:"500"
+                    });
+                    _this.parent().parent().remove();
+                    // if( $(".product").length<=0 || localStorage.length<=1){
+                    //     $(".pro-list").css("display","none");
+                    //     $(".has-selected").css("display","none");
+                    //     $(".no-product").css("display","flex");
+                    // }
+                }
+            });
+           
         }else{
             numVal--;
             numEl.text(numVal);
@@ -112,6 +118,7 @@ const operateNum = ()=>{
                 $(".total-price").text("￥"+totalPrice);
             }
             //对应的商品数量在localstorage里还进行减操作?
+            // 在数量元素上存入商品的ID
             // var id = $(this).next().attr("data-id");
             // localStorage[id] = --Number(localStorage[id]);
         }

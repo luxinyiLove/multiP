@@ -11,9 +11,9 @@ homeController.render();
 const router = new Router();
 router.init();  
 router.route("#main",mainController.render);
+// router.route("#location",locationController.render);
 router.route("#classify",classifyController.render);
 router.route("#member",memberController.render);
 router.route("#cart",cartController.render);
 router.route("#mine",mineController.render);
 
-locationController.render();

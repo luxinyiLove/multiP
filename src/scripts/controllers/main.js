@@ -4,6 +4,8 @@ import main from "../models/main";
 import mainListTpl from "../views/main-menu.html";
 import mainMarketTpl from "../views/main-market.html"
 import locationTpl from "../views/location.html";
+import locationController from "../controllers/location";
+
 
 const render =  ()=>{
     $(".main").html(mainTpl);
@@ -98,9 +100,11 @@ const change_title = ()=>{
     $(".banner-title div").on("tap",function(){
         $(this).addClass("active").siblings().removeClass("active");
     })
+    //点击进入定位页面
     $(".location").on("tap",function(){
         $(".home-container").css("display","none");
         $(".locate").html(locationTpl).css("display","flex");
+        locationController.render();
         location.hash = "#location";
     })
 }
