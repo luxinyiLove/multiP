@@ -20,6 +20,8 @@ Router.prototype.refresh = function(){
         this.currentHash = hash;
         this.routes[this.currentHash]();
         this.switchTabbar();
+        $(".home-container").css("display","flex");
+        $(".locate").css("display","none");
     }
     
 }

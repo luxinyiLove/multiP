@@ -738,8 +738,8 @@ a {
     -webkit-flex: 1;
     flex: 1;
     width: .1px;
-    background-color: #fff;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    background-color: #fff; }
   .home-container ul {
     width: 100%;
     height: .44rem;
@@ -749,7 +749,8 @@ a {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-around;
-    justify-content: space-around; }
+    justify-content: space-around;
+    background-color: #fff; }
     .home-container ul li {
       display: -webkit-box;
       display: -webkit-flex;
@@ -772,7 +773,7 @@ a {
         font-size: .12rem; }
 
 .main {
-  position: relative; }
+  background-color: #fff; }
   .main .topbar {
     width: 100%;
     height: 0.42rem;
@@ -868,7 +869,7 @@ a {
     margin-top: .13rem;
     border-top: .02rem solid #f3f3f3; }
     .main .advertising img {
-      width: 100%; }
+      width: 49%; }
   .main .promotion {
     width: 100%;
     display: -webkit-box;
@@ -913,3 +914,295 @@ a {
         width: 33.333%; }
         .main .supermarket .market-list > a > img {
           width: 100%; }
+
+.locate {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff; }
+  .locate .select-city {
+    width: 100%;
+    height: 0.44rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .locate .select-city > span {
+      display: block;
+      float: left;
+      width: 0.32rem;
+      height: 0.32rem;
+      background-color: #000;
+      text-align: center;
+      line-height: .32rem;
+      opacity: 0.7;
+      border-radius: 50%;
+      margin-left: .1rem;
+      color: #fff; }
+    .locate .select-city .select {
+      width: .74rem;
+      height: 0.4rem;
+      margin-left: 30%;
+      border: none; }
+  .locate .detail-info {
+    width: 100%;
+    height: 0.44rem;
+    padding-left: .1rem; }
+    .locate .detail-info input {
+      width: 2.85rem;
+      height: 0.3rem; }
+    .locate .detail-info button {
+      width: 0.6rem;
+      height: 0.32rem;
+      border: none;
+      background-color: #ccc;
+      border-radius: .05rem; }
+  .locate .locate-address {
+    padding-left: .1rem;
+    width: 100%;
+    height: 0.5rem;
+    line-height: 0.5rem; }
+
+.cart-body {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6; }
+  .cart-body .address {
+    height: 0.68rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background-color: #fff; }
+    .cart-body .address > p {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 0.02rem;
+      background: url("https://static.dmall.com/kayak-project/cart/dist/cart/common/image/shoppingline.png") repeat-x;
+      background-size: auto 2px; }
+    .cart-body .address > div {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      margin-left: .1rem; }
+      .cart-body .address > div > div P:nth-of-type(1) {
+        font-size: .16rem; }
+      .cart-body .address > div > div P:nth-of-type(2) {
+        font-size: .13rem;
+        color: #888; }
+      .cart-body .address > div > i {
+        margin-right: .05rem;
+        color: #ccc; }
+  .cart-body .footmark {
+    width: 0.57rem;
+    height: 0.57rem;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    position: absolute;
+    bottom: .6rem;
+    right: .1rem;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #888; }
+    .cart-body .footmark i {
+      position: absolute;
+      font-size: .25rem;
+      top: .03rem; }
+    .cart-body .footmark span {
+      position: absolute;
+      font-size: .12rem;
+      bottom: .06rem; }
+  .cart-body .no-product {
+    width: 100%;
+    height: 2.78rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: none; }
+    .cart-body .no-product > div {
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column; }
+      .cart-body .no-product > div > img {
+        width: 1rem; }
+      .cart-body .no-product > div p {
+        margin-top: .15rem;
+        color: #888; }
+      .cart-body .no-product > div > button {
+        position: absolute;
+        width: 1.16rem;
+        height: 0.44rem;
+        background-color: #ff8143;
+        border: none;
+        border-radius: .05rem;
+        bottom: -.69rem;
+        color: #fff; }
+  .cart-body .pro-list {
+    margin-top: .1rem;
+    background-color: #fff; }
+    .cart-body .pro-list .store {
+      width: 100%;
+      height: 0.44rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      padding-left: .1rem; }
+      .cart-body .pro-list .store span {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 0.2rem;
+        height: 0.2rem;
+        border-radius: 50%;
+        border: 1px solid #ccc; }
+        .cart-body .pro-list .store span i {
+          color: #fff; }
+      .cart-body .pro-list .store img {
+        margin-left: .1rem;
+        width: 0.29rem; }
+      .cart-body .pro-list .store p {
+        height: .44rem;
+        width: 2.75rem;
+        margin-left: .1rem;
+        line-height: .49rem;
+        color: #777; }
+      .cart-body .pro-list .store > i {
+        color: #ccc; }
+    .cart-body .pro-list > div {
+      width: 100%;
+      height: 0.66rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      border-bottom: .01rem solid #eee;
+      padding-left: .1rem; }
+      .cart-body .pro-list > div > span {
+        width: 0.2rem;
+        height: 0.2rem;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center; }
+        .cart-body .pro-list > div > span i {
+          color: #fff; }
+      .cart-body .pro-list > div > div:nth-of-type(1) {
+        width: 2.25rem;
+        margin-left: .1rem; }
+        .cart-body .pro-list > div > div:nth-of-type(1) p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .cart-body .pro-list > div > div:nth-of-type(1) b {
+          font-size: .16rem; }
+      .cart-body .pro-list > div > div:nth-of-type(2) button {
+        width: .27rem;
+        height: .23rem;
+        line-height: .23rem;
+        border: .01rem solid #ff8143;
+        border-radius: .03rem;
+        font-size: .2rem;
+        color: #ff8143;
+        background-color: #fff; }
+      .cart-body .pro-list > div > div:nth-of-type(2) span {
+        display: inline-block;
+        width: .3rem;
+        height: .23rem;
+        text-align: center;
+        font-weight: bold;
+        line-height: .3rem;
+        font-size: .16rem; }
+      .cart-body .pro-list > div .active {
+        background-color: #ff8143;
+        border: none; }
+  .cart-body .has-selected {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding-left: .1rem;
+    background-color: #fff;
+    height: .65rem; }
+    .cart-body .has-selected > div > p {
+      color: #ff8143; }
+      .cart-body .has-selected > div > p > b {
+        font-weight: bold;
+        font-size: .2rem; }
+    .cart-body .has-selected > div > span {
+      font-size: .12rem;
+      color: #777; }
+    .cart-body .has-selected button {
+      width: 0.88rem;
+      height: 0.44rem;
+      float: right;
+      border: none;
+      border-radius: .05rem;
+      margin-right: .1rem;
+      color: #fff; }
+    .cart-body .has-selected .ok-select {
+      background-color: #ff8143; }
