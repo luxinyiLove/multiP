@@ -154,7 +154,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vie
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_member_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/member.html */ \"./src/scripts/views/member.html\");\n/* harmony import */ var _views_member_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_member_html__WEBPACK_IMPORTED_MODULE_0__);\n\r\nconst render = ()=>{\r\n    $(\".main\").html(_views_member_html__WEBPACK_IMPORTED_MODULE_0___default.a);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    render\r\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/member.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_member_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/member.html */ \"./src/scripts/views/member.html\");\n/* harmony import */ var _views_member_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_member_html__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _views_membe_share_menu_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/membe_share_menu.html */ \"./src/scripts/views/membe_share_menu.html\");\n/* harmony import */ var _views_membe_share_menu_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_views_membe_share_menu_html__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _views_membe_share_imgList_html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/membe_share_imgList.html */ \"./src/scripts/views/membe_share_imgList.html\");\n/* harmony import */ var _views_membe_share_imgList_html__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_views_membe_share_imgList_html__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _models_member_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/member.js */ \"./src/scripts/models/member.js\");\n\r\n\r\n\r\n\r\n\r\nconst render = () => {\r\n    $(\".main\").html(_views_member_html__WEBPACK_IMPORTED_MODULE_0___default.a);\r\n    memberShare();\r\n    imgList();\r\n}\r\nconst imgList = async() => {\r\n    var result = await _models_member_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].renderDate();\r\n    var imgList = result.data.renderData;\r\n    var imgObj = JSON.parse(imgList).moduleList;\r\n\r\n    var list = \"\";\r\n\r\n    for (var i = 0; i < imgObj.length; i++) {\r\n        list = [...list, imgObj[i].data];\r\n    }\r\n    console.log(list);\r\n    let template = Handlebars.compile(_views_membe_share_imgList_html__WEBPACK_IMPORTED_MODULE_2___default.a);\r\n    let html = template({ list });\r\n    console.log(html)\r\n    $(\".img_area\").html(html)\r\n\r\n}\r\n\r\nconst memberShare = async() => {\r\n    //获取数据\r\n    var result = await _models_member_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].welfares_list();\r\n    var result_list = result.data.welfares;\r\n\r\n    let template = Handlebars.compile(_views_membe_share_menu_html__WEBPACK_IMPORTED_MODULE_1___default.a);\r\n    result_list.length = 5;\r\n    let html = template({ list: result_list });\r\n    $(\".share\").html(html);\r\n\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    render\r\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/member.js?");
 
 /***/ }),
 
@@ -166,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vie
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_mine_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/mine.html */ \"./src/scripts/views/mine.html\");\n/* harmony import */ var _views_mine_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_mine_html__WEBPACK_IMPORTED_MODULE_0__);\n\r\nconst render = ()=>{\r\n    $(\".main\").html(_views_mine_html__WEBPACK_IMPORTED_MODULE_0___default.a);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    render\r\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/mine.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_mine_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/mine.html */ \"./src/scripts/views/mine.html\");\n/* harmony import */ var _views_mine_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_mine_html__WEBPACK_IMPORTED_MODULE_0__);\n\r\nconst render = () => {\r\n        $(\".main\").html(_views_mine_html__WEBPACK_IMPORTED_MODULE_0___default.a);\r\n    }\r\n    //先渲染整体 在渲染局部\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    render\r\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/mine.js?");
 
 /***/ }),
 
@@ -178,7 +178,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vie
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst banner_title = ()=>{\r\n    return $.ajax({\r\n        type:\"get\",\r\n        url:\"/business?param=%7B%22longitude%22%3A%22116.23359%22%2C%22latitude%22%3A%2240.22055%22%7D&token=79FA24EB835804A901C7C22766EF54921E600234D3A88A988649F9C58F8827827E6D6F96946D61A5AC6A4EACA9F4847EB8732D40897F5DA39C7881119283B2C0404F3A2964BECBBAD0472F3DC41F6726B00137562922888947C794A2F2D117EAADB7F802527615B88EB992E710BDF384A37D2FACA9D8E272448C3DCFA22F8B79&source=2&tempid=C82C19E4891000025DF9C4D0109A18AF&pubParam=%7B%7D&_=153935098095\",\r\n        success:(result)=>{\r\n            return result;\r\n        }\r\n    });\r\n}\r\n\r\n// 首页总数据数据获取\r\nconst totalData = ()=>{\r\n    return $.ajax({\r\n        type:\"get\",\r\n        url:\"/businessIndex?param=%7B%22index%22%3A0%2C%22currentPage%22%3A1%2C%22reqUrl%22%3A%22https%3A%2F%2Fcmsapi.dmall.com%2Fapp%2Fweb%2Fjson%2F1%2F10437%22%2C%22pairs%22%3A%221-0-10437%22%2C%22code%22%3A%221%22%2C%22networkType%22%3A2%7D&token=79FA24EB835804A901C7C22766EF54921E600234D3A88A988649F9C58F8827827E6D6F96946D61A5AC6A4EACA9F4847EB8732D40897F5DA39C7881119283B2C0404F3A2964BECBBAD0472F3DC41F6726B00137562922888947C794A2F2D117EAADB7F802527615B88EB992E710BDF384A37D2FACA9D8E272448C3DCFA22F8B79&source=2&tempid=C82C19E4891000025DF9C4D0109A18AF&pubParam=%7B%7D\",\r\n        success:(result)=>{\r\n            return result;\r\n        }\r\n    });\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    banner_title,\r\n    totalData\r\n});\n\n//# sourceURL=webpack:///./src/scripts/models/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst banner_title = () => {\r\n    return $.ajax({\r\n        type: \"get\",\r\n        url: \"/business?param=%7B%22longitude%22%3A%22116.23359%22%2C%22latitude%22%3A%2240.22055%22%7D&token=79FA24EB835804A901C7C22766EF54921E600234D3A88A988649F9C58F8827827E6D6F96946D61A5AC6A4EACA9F4847EB8732D40897F5DA39C7881119283B2C0404F3A2964BECBBAD0472F3DC41F6726B00137562922888947C794A2F2D117EAADB7F802527615B88EB992E710BDF384A37D2FACA9D8E272448C3DCFA22F8B79&source=2&tempid=C82C19E4891000025DF9C4D0109A18AF&pubParam=%7B%7D&_=153935098095\",\r\n        success: (result) => {\r\n            return result;\r\n        }\r\n    });\r\n}\r\n\r\n// 首页总数据数据获取\r\nconst totalData = () => {\r\n    return $.ajax({\r\n        type: \"get\",\r\n        url: \"/businessIndex?param=%7B%22index%22%3A0%2C%22currentPage%22%3A1%2C%22reqUrl%22%3A%22https%3A%2F%2Fcmsapi.dmall.com%2Fapp%2Fweb%2Fjson%2F1%2F10437%22%2C%22pairs%22%3A%221-0-10437%22%2C%22code%22%3A%221%22%2C%22networkType%22%3A2%7D&token=79FA24EB835804A901C7C22766EF54921E600234D3A88A988649F9C58F8827827E6D6F96946D61A5AC6A4EACA9F4847EB8732D40897F5DA39C7881119283B2C0404F3A2964BECBBAD0472F3DC41F6726B00137562922888947C794A2F2D117EAADB7F802527615B88EB992E710BDF384A37D2FACA9D8E272448C3DCFA22F8B79&source=2&tempid=C82C19E4891000025DF9C4D0109A18AF&pubParam=%7B%7D\",\r\n        success: (result) => {\r\n            return result;\r\n        }\r\n    });\r\n}\r\n\r\n\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    banner_title,\r\n    totalData\r\n});\n\n//# sourceURL=webpack:///./src/scripts/models/main.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/models/member.js":
+/*!**************************************!*\
+  !*** ./src/scripts/models/member.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n//中间 分享有礼横条的数据\r\nconst welfares_list = () => {\r\n        return $.ajax({\r\n            type: \"get\",\r\n            url: \"/user/memberTab?token=83EB7F557CCF2635BB848552649E4DC9BF53CAC004E68C19B05722A1C4AA92F8177688A76B545E42B879004E4542F08F595A6DE9E36F8970AEEAE1FE4D2BDF92EEEB8AE7D81884C5F4FC70882CCD6ED5E241327666682DE04BD75E3AA1C60DDCDA0B1386915EAC1D525428531C293778A73BF32390D526B249F6E702FDC128D7&source=2&tempid=C82C1A2BD75000028C44114FC3801807&_=1539499165097\",\r\n            success: (result) => {\r\n                return result;\r\n            }\r\n        });\r\n    }\r\n    //图片列表数据\r\nconst renderDate = () => {\r\n    return $.ajax({\r\n        type: \"get\",\r\n        url: \"/i/pageData?dshopStoreId=11491&actId=816&pageId=2330&token=83EB7F557CCF2635BB848552649E4DC9BF53CAC004E68C19B05722A1C4AA92F8177688A76B545E42B879004E4542F08F595A6DE9E36F8970AEEAE1FE4D2BDF92EEEB8AE7D81884C5F4FC70882CCD6ED5E241327666682DE04BD75E3AA1C60DDCDA0B1386915EAC1D525428531C293778A73BF32390D526B249F6E702FDC128D7&source=2&tempid=C82C1A2BD75000028C44114FC3801807&_=1539497626339\",\r\n        success: (result) => {\r\n            return result;\r\n        }\r\n    })\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    welfares_list,\r\n    renderDate\r\n});\n\n//# sourceURL=webpack:///./src/scripts/models/member.js?");
 
 /***/ }),
 
@@ -260,6 +272,28 @@ eval("module.exports = \"<div>   <!-- 顶部状态栏 -->    <div class=\\\"topb
 
 /***/ }),
 
+/***/ "./src/scripts/views/membe_share_imgList.html":
+/*!****************************************************!*\
+  !*** ./src/scripts/views/membe_share_imgList.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"{{#each list}}<img src=\\\"{{imgSrc}}\\\" alt=\\\"\\\" /> {{/each}}\"\n\n//# sourceURL=webpack:///./src/scripts/views/membe_share_imgList.html?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/membe_share_menu.html":
+/*!*************************************************!*\
+  !*** ./src/scripts/views/membe_share_menu.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"{{#each list}}<a href=\\\"{{activityUrl}}\\\">    <img src=\\\"{{logo}}\\\" alt=\\\"\\\">    <span>{{name}}</span></a>{{/each}}\"\n\n//# sourceURL=webpack:///./src/scripts/views/membe_share_menu.html?");
+
+/***/ }),
+
 /***/ "./src/scripts/views/member.html":
 /*!***************************************!*\
   !*** ./src/scripts/views/member.html ***!
@@ -267,7 +301,7 @@ eval("module.exports = \"<div>   <!-- 顶部状态栏 -->    <div class=\\\"topb
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<div>    这是会员页面</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/member.html?");
+eval("module.exports = \"<div>    <div class=\\\"top\\\">        <p>Hello,普通会员</p>        <div class=\\\"member_icon\\\">            <a href=\\\"##\\\">                <i class=\\\"iconfont\\\">&#xe606;</i>                <span>会员中心</span>            </a>            <a href=\\\"##\\\">                <i class=\\\"iconfont\\\">&#xe606;</i>                <span>会员专属码</span>            </a>        </div>        <div class=\\\"menu_list\\\">            <a href=\\\"\\\">                <i>0</i>                <em>余额</em>            </a>            <a href=\\\"\\\"> <i>0</i>                <em>余额</em></a>            <a href=\\\"\\\"> <i>0</i>                <em>余额</em></a>            <a href=\\\"\\\"> <i>0</i>                <em>余额</em></a>        </div>    </div>    <div class=\\\"share\\\">    </div>    <div class=\\\"empty\\\"></div>    <div class=\\\"img_area\\\">    </div></div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/member.html?");
 
 /***/ }),
 
@@ -278,7 +312,7 @@ eval("module.exports = \"<div>    这是会员页面</div>\"\n\n//# sourceURL=we
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<div>    这是我的页面</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/mine.html?");
+eval("module.exports = \"<div class=\\\"top_cont\\\">    <div class=\\\"qiandao\\\">        <p>去签到</p>    </div>    <div class=\\\"left_cont\\\">        <img src=\\\"//img.dmallcdn.com/common/b8cb181b-5e07-4e6a-97f1-6ef1789c2cb1\\\" alt=\\\"\\\">        <div>            <p>你好</p>            <div>                <p>普通会员</p>            </div>        </div>    </div>    <div class=\\\"right_cont\\\">        <div>            <p>会员优惠码</p>            <p>仅限App使用</p>        </div>        <i class=\\\"iconfont\\\">&#xe606;</i>    </div></div><div class=\\\"order\\\">    <p>我的订单</p>    <p>全部订单</p></div><div class=\\\"pay_menu\\\">    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>待支付</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>待发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div></div><div class=\\\"empty\\\"></div><h2>我的资产</h2><div class=\\\"money_menu\\\">    <div>        <i>0.00</i>        <em>余额</em>    </div>    <div>        <i>0</i>        <em>积分</em>    </div>    <div>        <i>0.00</i>        <em>卡包</em>    </div>    <div>        <i>0</i>        <em>优惠券</em>    </div></div><div class=\\\"empty\\\"></div><h2>我的服务</h2><div class=\\\"vip_menu\\\">    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div>    <div>        <i class=\\\"iconfont\\\">&#xe606;</i>        <em>已发货</em>    </div></div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/mine.html?");
 
 /***/ })
 

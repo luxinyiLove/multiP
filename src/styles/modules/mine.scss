@@ -1,0 +1,150 @@
+.top_cont {
+    width: 100%;
+    height: 1.3rem;
+    background: #fe8053;
+    position: relative;
+    .qiandao {
+        background: pink;
+        width: 0.7rem;
+        height: 0.25rem;
+        border-radius: 0.2rem 0 0 0.2rem;
+        position: absolute;
+        right: 0;
+        top: 0.1rem;
+        >p {
+            text-align: center;
+            line-height: 0.25rem;
+            height: .25rem;
+            font-size: .12rem;
+            color: white;
+        }
+    }
+    .left_cont {
+        padding-top: 0.3rem;
+        width: 1.6rem;
+        height: 0.6rem;
+        margin-left: .16rem;
+        @include flexbox();
+        @include justify-content(space-between);
+        >img {
+            width: .6rem;
+            height: .6rem;
+            border-radius: 50%;
+        }
+        >div {
+            width: 0.94rem;
+            height: 0.6rem;
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(space-between);
+            >p {
+                font-size: .16rem;
+            }
+            >div {
+                width: 0.94rem;
+                height: .26rem;
+                border-radius: 0.2rem;
+                background: #ffffff;
+                >p {
+                    text-align: center;
+                    height: .26rem;
+                    line-height: .26rem;
+                }
+            }
+        }
+    }
+    .right_cont {
+        margin-left: 2.5rem;
+        width: 1.06rem;
+        height: .28rem;
+        @include flexbox();
+        @include justify-content(space-between);
+        >div {
+            width: 0.73rem;
+            height: .28rem;
+            >p {
+                &:nth-child(1) {
+                    font-size: .12rem;
+                    line-height: .12rem;
+                }
+                &:nth-child(2) {
+                    font-size: 0.12rem;
+                    line-height: .12rem;
+                }
+            }
+        }
+        >i {
+            width: 0.34rem;
+            height: .28rem;
+        }
+    }
+}
+
+.order {
+    width: 100%;
+    height: .36rem;
+    @include flexbox;
+    @include justify-content(space-between);
+    @include border(0 0 1px 0);
+    padding: 0 0.2rem;
+    >p {
+        height: .36rem;
+        line-height: .36rem;
+    }
+}
+
+.pay_menu {
+    width: 100%;
+    height: .86rem;
+    @include flexbox();
+    >div {
+        width: 33.33%;
+        height: .86rem;
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+    }
+}
+
+.empty {
+    width: 100%;
+    height: .1rem;
+    background: #cccccc;
+}
+
+h2 {
+    height: 0.3rem;
+    line-height: 0.3rem;
+    margin-left: .2rem;
+    font-weight: inherit;
+}
+
+.money_menu {
+    width: 100%;
+    height: .88rem;
+    @include flexbox();
+    @include border(1px 0 0 0);
+    >div {
+        width: 25%;
+        ++@include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        @include flex-direction(column);
+    }
+}
+
+.vip_menu {
+    width: 100%;
+    height: 2.4rem;
+    @include flexbox();
+    @include flex-wrap(wrap);
+    >div {
+        height: 0.8rem;
+        width: 25%;
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        @include flex-direction(column);
+    }
+}
