@@ -950,28 +950,92 @@ a {
       margin-left: .1rem;
       color: #fff; }
     .locate .select-city .select {
-      width: .74rem;
+      width: 1.8rem;
       height: 0.4rem;
-      margin-left: 30%;
-      border: none; }
+      margin-left: 17%;
+      border: none;
+      background-color: #f6f6f6;
+      font-size: .16rem; }
   .locate .detail-info {
     width: 100%;
     height: 0.44rem;
-    padding-left: .1rem; }
+    margin-top: .05rem;
+    padding-left: 3%; }
+    .locate .detail-info span {
+      display: block;
+      float: left;
+      width: 0.25rem;
+      height: 0.3rem;
+      border: .01rem solid #aaa;
+      border-right: none; }
+      .locate .detail-info span i {
+        margin-left: .03rem; }
     .locate .detail-info input {
-      width: 2.85rem;
-      height: 0.3rem; }
-    .locate .detail-info button {
-      width: 0.6rem;
-      height: 0.32rem;
-      border: none;
-      background-color: #ccc;
-      border-radius: .05rem; }
+      width: 85%;
+      height: 0.3rem;
+      border: .01rem solid #aaa;
+      border-left: none; }
   .locate .locate-address {
     padding-left: .1rem;
     width: 100%;
     height: 0.5rem;
-    line-height: 0.5rem; }
+    line-height: 0.5rem;
+    padding-left: .1rem; }
+    .locate .locate-address i {
+      font-size: .2rem;
+      color: #bbb; }
+    .locate .locate-address span {
+      font-size: .16rem;
+      margin-left: .1rem;
+      color: #555; }
+  .locate .address-info {
+    width: 100% !important;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    .locate .address-info i {
+      font-size: .25rem;
+      color: #aaa; }
+    .locate .address-info span {
+      color: #555; }
+  .locate .add-address {
+    width: 100%;
+    height: 0.44rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #ff8143; }
+    .locate .add-address div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center; }
+    .locate .add-address i {
+      font-size: .3rem; }
+    .locate .add-address span {
+      margin-left: .05rem; }
 
 .cart-body {
   width: 100%;
