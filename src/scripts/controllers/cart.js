@@ -1,15 +1,54 @@
 import cartTpl from "../views/cart.html";
-import cart from "../models/cart";
+import cartModel from "../models/cart";
 
-const render = ()=>{
+const render = async ()=>{
     $(".main").html(cartTpl);
+    await renderList();
     allSelect();
     singleSelect();
     operateNum();
+    buyNow();
+    // localStorage[1] = 1;
+    // localStorage[2] = 1;
+    // localStorage[3] = 1;
+    // var a = 1;
+    // localStorage.removeItem[a];
+    // localStorage.clear();
 }
 
-//商品渲染?
 
+//商品渲染?
+const renderList = async ()=>{
+    var data = await cartModel.render();
+    console.log(data);
+    var str = "";
+    var str1 = $(".pro-list").html();
+    for(var i=0; i<data.length; i++){
+        for(var key in localStorage){
+            if(data[i].id==key){
+            str += `<div class="product">
+                        <span class="single-Select"><i class="iconfont">&#xe671;</i></span>
+                        <div>
+                            <p class="des">${data[i].name}</p>
+                            <b class="price">${"￥"+data[i].addPrice/100}</b>
+                        </div>
+                        <div>
+                            <button class="sub">-</button>
+                            <span class="operate-num" data-id="${key}">${localStorage[key]}</span>
+                            <button class="add">+</button>
+                        </div>
+                    </div>`
+            }
+        }
+    }
+    $(".pro-list").html(str1+str);
+    //如果首次进入购物车没数据，则应该隐藏掉
+    if( $(".product").length<=0 || localStorage.length<1){
+        $(".pro-list").css("display","none");
+        $(".has-selected").css("display","none");
+        $(".no-product").css("display","flex");
+    }
+}
 
 // 全选
 const allSelect = ()=>{
@@ -89,6 +128,9 @@ const operateNum = ()=>{
         var numEl = $(this).next();
         var numVal = Number($(this).next().text());
         var _this = $(this);
+        var id = $(this).next().attr("data-id");
+        console.log( id);
+
         if(numVal<=1){
             layer.open({
                 content:"是否删除该商品?",
@@ -97,12 +139,24 @@ const operateNum = ()=>{
                     layer.msg('删除成功',{
                         time:"500"
                     });
+                    localStorage.removeItem(id);
                     _this.parent().parent().remove();
-                    // if( $(".product").length<=0 || localStorage.length<=1){
-                    //     $(".pro-list").css("display","none");
-                    //     $(".has-selected").css("display","none");
-                    //     $(".no-product").css("display","flex");
-                    // }
+                    // 如果选中状态下删除还有进行总价加减
+                    if(_this.parent().prev().prev().attr("select") == "true"){
+                        var price = Number(_this.parent().prev().children().eq(1).text().slice(1));
+                        var totalPrice = Number($(".total-price").text().slice(1));
+                        totalPrice -= price;
+                        totalPrice = totalPrice.toFixed(2);
+                        $(".total-price").text("￥"+totalPrice);
+                    }
+                    if( $(".product").length<=0 || localStorage.length<1){
+                        $(".pro-list").css("display","none");
+                        $(".has-selected").css("display","none");
+                        $(".no-product").css("display","flex");
+                        // console.log($(".product").length)
+                    }
+                    // console.log(localStorage);
+
                 }
             });
            
@@ -119,8 +173,10 @@ const operateNum = ()=>{
             }
             //对应的商品数量在localstorage里还进行减操作?
             // 在数量元素上存入商品的ID
-            // var id = $(this).next().attr("data-id");
-            // localStorage[id] = --Number(localStorage[id]);
+            var id = $(this).next().attr("data-id");
+            var l_num = Number(localStorage[id]);
+            l_num--;
+            localStorage[id] = l_num;
         }
         
     })
@@ -138,8 +194,16 @@ const operateNum = ()=>{
             $(".total-price").text("￥"+totalPrice);
         }
         //对应的商品数量在localstorage里还进行加操作?
-        // var id = $(this).next().attr("data-id");
-        // localStorage[id] = ++Number(localStorage[id]);
+        var id = $(this).prev().attr("data-id");
+        var l_num = Number(localStorage[id]);
+        l_num++;
+        localStorage[id] = l_num;
+    })
+}
+
+const buyNow = ()=>{
+    $(".nowBuy").on("tap",function(){
+        location.hash = "#main";
     })
 }
 

@@ -58,6 +58,13 @@ gulp.task("server",()=>{
 				proxy("/address",{
 					target:"https://gatewx.dmall.com",
 					changeOrigin:true
+				}),
+				proxy('/api', {
+					target: 'http://localhost:3000',
+					changeOrigin: true,
+					pathRewrite:{
+						"^/api":""
+					}
 				})
 			]
 		}));
