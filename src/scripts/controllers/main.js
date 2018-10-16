@@ -3,23 +3,27 @@ import mainModel from "../models/main";
 import main from "../models/main";
 import mainListTpl from "../views/main-menu.html";
 import mainMarketTpl from "../views/main-market.html"
+import locationTpl from "../views/location.html";
+import locationController from "../controllers/location";
+
 
 const render =  ()=>{
     $(".main").html(mainTpl);
     banner();
     change_title();
     menu();
-    promotion();
+    // promotion();
     theme();
     market();
 }
 
 //超市优选
 const market = async ()=>{
-    var result = (await mainModel.totalData()).data.pageModules[11].dataList;
+    //9+10
+    var result = (await mainModel.totalData()).data.pageModules[9].dataList;
     $(".supermarket>img").attr("src",result[0].imageUrl);
     var data = "";
-    for(var i=12; i<=14; i++){
+    for(var i=10; i<=12; i++){
         data = [...data,...(await mainModel.totalData()).data.pageModules[i].dataList];
         let template = Handlebars.compile(mainMarketTpl);
         let html = template({data});
@@ -30,8 +34,8 @@ const market = async ()=>{
 
 //主题乐园
 const theme = async ()=>{
-    var data1 =  (await mainModel.totalData()).data.pageModules[8].dataList;
-    var data2 =  (await mainModel.totalData()).data.pageModules[9].dataList;
+    var data1 =  (await mainModel.totalData()).data.pageModules[6].dataList;
+    var data2 =  (await mainModel.totalData()).data.pageModules[7].dataList;
     $(".theme>img").attr("src",data1[0].imageUrl);
     // console.log($(".theme-img img"))
     $(".theme-img>a>img").attr("src",data2[0].imageUrl).parent().attr("href",data2[0].resource);
@@ -41,12 +45,12 @@ const theme = async ()=>{
 }
 
 // 大促
-const promotion = async ()=>{
-    var data = (await mainModel.totalData()).data.pageModules[6].dataList;
-    $(".promotion img").each(function(i){
-        $(this).attr("src",data[i].imageUrl).parent().attr("href",data[i].resource);
-    })
-}
+// const promotion = async ()=>{
+//     var data = (await mainModel.totalData()).data.pageModules[6].dataList;
+//     $(".promotion img").each(function(i){
+//         $(this).attr("src",data[i].imageUrl).parent().attr("href",data[i].resource);
+//     })
+// }
 
 //功能菜单区
 const menu = async ()=>{
@@ -62,10 +66,10 @@ const menu = async ()=>{
 //轮播图渲染
 const banner = async ()=>{
     var result = await mainModel.banner_title();
-    $(".banner-title img:first").attr("src",result.data[0].business[1].label);
-    $(".banner-title img:last").attr("src",result.data[0].business[2].label);
-    $(".banner-title span:first").text(result.data[0].business[1].name);
-    $(".banner-title span:last").text(result.data[0].business[2].name);
+    $(".banner-title img:first").attr("src",result.data[0].business[0].label);
+    $(".banner-title img:last").attr("src",result.data[0].business[1].label);
+    $(".banner-title span:first").text(result.data[0].business[0].name);
+    $(".banner-title span:last").text(result.data[0].business[1].name);
     //图片及对应的超链接设置
     var data = (await mainModel.totalData()).data.pageModules[0].dataList;
     $(".swiper-wrapper img").each(function(i){
@@ -95,6 +99,13 @@ const banner = async ()=>{
 const change_title = ()=>{
     $(".banner-title div").on("tap",function(){
         $(this).addClass("active").siblings().removeClass("active");
+    })
+    //点击进入定位页面
+    $(".location").on("tap",function(){
+        $(".home-container").css("display","none");
+        $(".locate").html(locationTpl).css("display","flex");
+        locationController.render();
+        location.hash = "#location";
     })
 }
 
