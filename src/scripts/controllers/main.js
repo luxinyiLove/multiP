@@ -4,7 +4,11 @@ import main from "../models/main";
 import mainListTpl from "../views/main-menu.html";
 import mainMarketTpl from "../views/main-market.html"
 import locationTpl from "../views/location.html";
+import searchController from '../controllers/search';
+import Router  from '../utils/router';
 
+var router = new Router();
+// import searchTpl from '';
 const render =  ()=>{
     $(".main").html(mainTpl);
     banner();
@@ -13,12 +17,29 @@ const render =  ()=>{
     // promotion();
     theme();
     market();
+    search();
 }
+// 点击搜索跳转到搜索页面
+
+const search = ()=>{
+    const searchCon = $(".search_cli");
+    const nav = $(".nav");
+   searchCon.on("tap",function(){
+       location.hash = "#search";
+   searchController.render();
+// router.route("#search",searchController.render);
+
+   })
+}
+
+
 
 //超市优选
 const market = async ()=>{
+   
     //9+10
     var result = (await mainModel.totalData()).data.pageModules[9].dataList;
+   
     $(".supermarket>img").attr("src",result[0].imageUrl);
     var data = "";
     for(var i=10; i<=12; i++){

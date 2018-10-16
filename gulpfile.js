@@ -58,7 +58,15 @@ gulp.task("server",()=>{
 				proxy("/businessIndex",{
 					target:"https://wxcmsapi.dmall.com/weixin/home",
 					changeOrigin:true
-				})
+				}),
+				proxy('/search',{
+					target:'https://gatewx.dmall.com/',
+					changeOrigin:true
+				}),
+				// proxy('/search',{
+				// 	target: 'http://localhost:3000',
+				// 	changeOrigin:true
+				// })
 			]
 		}));
 })
