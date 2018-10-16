@@ -127,7 +127,7 @@ h2 {
     @include border(1px 0 0 0);
     >div {
         width: 25%;
-        ++@include flexbox();
+        @include flexbox();
         @include justify-content(center);
         @include align-items(center);
         @include flex-direction(column);
