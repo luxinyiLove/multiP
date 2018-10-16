@@ -10,7 +10,6 @@ const render = async ()=>{
         location.hash = "#main";
     })
     var data = (await addressModel.address()).data.cityList;
-    console.log(data);
     // let template = Handlebars.compile(mainMarketTpl);
     //     let html = template({data});
     //     $(".market-list").html(html);
