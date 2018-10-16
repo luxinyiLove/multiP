@@ -42,7 +42,7 @@ const renderList = async() => {
         }
     }
     $(".pro-list").html(str1 + str);
-    $(".pro-list").css("display", "none");
+    // $(".pro-list").css("display", "none");
     //如果首次进入购物车没数据，则应该隐藏掉
     if ($(".product").length <= 0 || localStorage.length < 1) {
         $(".pro-list").css("display", "none");

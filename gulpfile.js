@@ -54,13 +54,13 @@ gulp.task("server", () => {
                         target: "https://wxcmsapi.dmall.com/weixin/home",
                         changeOrigin: true
                     }),
-                    //会员分享的接口
+                    // 会员分享的接口
                     proxy("/user", {
                         target: "https://gatewx.dmall.com",
                         changeOrigin: true
                     }),
                     //会员分享下的图片列表
-                    proxy("/i", {
+                    proxy("/i/pageData", {
                         target: " https://a.dmall.com",
                         changeOrigin: true
                     }),
