@@ -110,6 +110,7 @@
         @include align-items(center);
         >i {
             color: orangered;
+            font-size: .25rem;
         }
     }
 }
@@ -155,6 +156,7 @@ h2 {
         @include flex-direction(column);
         >i {
             color: orangered;
+            font-size: .25rem;
         }
     }
 }
