@@ -1,11 +1,12 @@
 import mainTpl from "../views/main.html";
 import mainModel from "../models/main";
-import main from "../models/main";
 import mainListTpl from "../views/main-menu.html";
 import mainMarketTpl from "../views/main-market.html"
 import locationTpl from "../views/location.html";
 import searchController from '../controllers/search';
 import Router  from '../utils/router';
+import locationController from "../controllers/location";
+
 
 var router = new Router();
 // import searchTpl from '';
@@ -56,7 +57,6 @@ const theme = async ()=>{
     var data1 =  (await mainModel.totalData()).data.pageModules[6].dataList;
     var data2 =  (await mainModel.totalData()).data.pageModules[7].dataList;
     $(".theme>img").attr("src",data1[0].imageUrl);
-    // console.log($(".theme-img img"))
     $(".theme-img>a>img").attr("src",data2[0].imageUrl).parent().attr("href",data2[0].resource);
     $(".theme-img>div>a>img").each(function(i){
         $(this).attr("src",data2[i+1].imageUrl).parent().attr("href",data2[i+1].resource);
@@ -119,9 +119,11 @@ const change_title = ()=>{
     $(".banner-title div").on("tap",function(){
         $(this).addClass("active").siblings().removeClass("active");
     })
+    //点击进入定位页面
     $(".location").on("tap",function(){
         $(".home-container").css("display","none");
         $(".locate").html(locationTpl).css("display","flex");
+        locationController.render();
         location.hash = "#location";
     })
 }

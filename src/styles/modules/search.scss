@@ -25,15 +25,14 @@
     }
 }
 
-.search_c,.search_b{
-    margin: .1rem   .1rem .1rem .1rem;
 
-}
+
+
 .search_b{
     .search_list{
         justify-content: flex-start;
         li{
-            border-radius: .2rem;
+           border-radius: .2rem;
            margin-left: .05rem;
            font-size: .16rem;
            background: #f9f9f9;
@@ -51,4 +50,17 @@
             padding: 0 .21rem;
         }
     }
+}
+
+
+
+.search_c,.search_b{
+    margin: .1rem   .1rem .1rem .1rem;
+   ul{
+       li{
+           clear: both;
+           padding: 0;
+       }
+   }
+
 }

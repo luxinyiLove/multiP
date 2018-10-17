@@ -24,9 +24,9 @@
 }
 
 .search_con ul li p {
-  text-indent: .2rem;
   border-bottom: none;
   width: 100%;
+  line-height: .2rem;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

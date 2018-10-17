@@ -14,6 +14,7 @@ const render = ()=>{
 const list = async () => {
    
     let listSource  = (await searchList.list()).list;
+    console.log(listSource)
    renderList(listSource);
   }
 

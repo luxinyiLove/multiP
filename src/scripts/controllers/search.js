@@ -1,6 +1,5 @@
 
 import searchTpl from "../views/search.html";
-import searchModel from '../models/search';
 import searchConTpl from '../views/searchCon.html';
 const render =  ()=>{
     $(".main").html(searchTpl);
@@ -18,7 +17,6 @@ $(document).on("keypress",(e)=>{
     var input = $(".search_t>input");
    if(keyCode == 13){
        var value = input.val();
-       
         if(value != ""){
             location.hash = "#searchCon";
             $(".main .search_c").html("");
