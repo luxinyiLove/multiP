@@ -1479,7 +1479,8 @@ a {
       -webkit-justify-content: space-between;
       justify-content: space-between; }
       .top_cont .left_cont > div > p {
-        font-size: .16rem; }
+        font-size: .16rem;
+        color: white; }
       .top_cont .left_cont > div > div {
         width: 0.94rem;
         height: .26rem;
@@ -1510,7 +1511,10 @@ a {
         line-height: .12rem; }
     .top_cont .right_cont > i {
       width: 0.34rem;
-      height: .28rem; }
+      height: .28rem;
+      font-size: .28rem;
+      text-align: center;
+      line-height: .28rem; }
 
 .order {
   width: 100%;
@@ -1577,6 +1581,8 @@ a {
     -webkit-box-align: center;
     -webkit-align-items: center;
     align-items: center; }
+    .pay_menu > div > i {
+      color: orangered; }
 
 .empty {
   width: 100%;
@@ -1664,3 +1670,5 @@ h2 {
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     flex-direction: column; }
+    .vip_menu > div > i {
+      color: orangered; }
