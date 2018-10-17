@@ -71,6 +71,8 @@ const history_s = ()=>{
 const ret = ()=>{
     $(".ret").on("tap",()=>{
         location.hash = "#main";
+        const nav = $(".nav");
+        nav.css("display","block");
     })
 }
 export default {

@@ -1247,6 +1247,10 @@ a {
     border-color: #e8e9e9;
     color: #808080; }
 
+.home-container ul li {
+  float: left;
+  padding: 0 .21rem; }
+
 .search_con p {
   display: flex;
   justify-content: space-around;
@@ -1256,7 +1260,8 @@ a {
 .search_con ul {
   width: 100%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
   .search_con ul li {
     width: 50%;
     height: 2.52rem;
