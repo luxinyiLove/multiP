@@ -8,12 +8,6 @@ const render = async() => {
     singleSelect();
     operateNum();
     buyNow();
-    // localStorage[1] = 1;
-    // localStorage[2] = 1;
-    // localStorage[3] = 1;
-    // var a = 1;
-    // localStorage.removeItem[a];
-    // localStorage.clear();
 }
 
 
@@ -25,7 +19,9 @@ const renderList = async() => {
     var str1 = $(".pro-list").html();
     for (var i = 0; i < data.length; i++) {
         for (var key in localStorage) {
-            if (data[i].id == key) {
+            var arr = key.split("");
+            var key1 = arr[arr.length-1];
+            if (data[i].id == key1) {
                 str += `<div class="product">
                         <span class="single-Select"><i class="iconfont">&#xe671;</i></span>
                         <div>
@@ -42,7 +38,6 @@ const renderList = async() => {
         }
     }
     $(".pro-list").html(str1 + str);
-    // $(".pro-list").css("display", "none");
     //如果首次进入购物车没数据，则应该隐藏掉
     if ($(".product").length <= 0 || localStorage.length < 1) {
         $(".pro-list").css("display", "none");
@@ -154,9 +149,7 @@ const operateNum = () => {
                         $(".pro-list").css("display", "none");
                         $(".has-selected").css("display", "none");
                         $(".no-product").css("display", "flex");
-                        // console.log($(".product").length)
                     }
-                    // console.log(localStorage);
 
                 }
             });
@@ -172,7 +165,7 @@ const operateNum = () => {
                 totalPrice = totalPrice.toFixed(2);
                 $(".total-price").text("￥" + totalPrice);
             }
-            //对应的商品数量在localstorage里还进行减操作?
+            //对应的商品数量在localstorage里还进行减操作
             // 在数量元素上存入商品的ID
             var id = $(this).next().attr("data-id");
             var l_num = Number(localStorage[id]);
