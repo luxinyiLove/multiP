@@ -3,7 +3,6 @@
 import Router from "./utils/router";
 import homeController from "./controllers/home";
 import mainController from "./controllers/main";
-import locationController from "./controllers/location";
 import classifyController from "./controllers/classify";
 import memberController from "./controllers/member";
 import cartController from "./controllers/cart";
@@ -12,7 +11,6 @@ homeController.render();
 const router = new Router();
 router.init();  
 router.route("#main",mainController.render);
-// router.route("#location",locationController.render);
 router.route("#classify",classifyController.render);
 router.route("#member",memberController.render);
 router.route("#cart",cartController.render);

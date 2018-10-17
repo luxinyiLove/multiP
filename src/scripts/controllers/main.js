@@ -37,7 +37,6 @@ const theme = async ()=>{
     var data1 =  (await mainModel.totalData()).data.pageModules[6].dataList;
     var data2 =  (await mainModel.totalData()).data.pageModules[7].dataList;
     $(".theme>img").attr("src",data1[0].imageUrl);
-    // console.log($(".theme-img img"))
     $(".theme-img>a>img").attr("src",data2[0].imageUrl).parent().attr("href",data2[0].resource);
     $(".theme-img>div>a>img").each(function(i){
         $(this).attr("src",data2[i+1].imageUrl).parent().attr("href",data2[i+1].resource);
