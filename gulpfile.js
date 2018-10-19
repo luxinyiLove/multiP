@@ -1,4 +1,5 @@
-﻿﻿const gulp = require("gulp");
+
+const gulp = require("gulp");
 const server = require("gulp-webserver");
 const sass = require("gulp-sass");
 const webpack = require("webpack-stream");
@@ -34,7 +35,8 @@ gulp.task("packScss", () => {
         .pipe(gulp.dest("./dev/styles"));
 })
 
-// 启动一个web-server
+
+			
 gulp.task("server", () => {
     return gulp.src("./dev")
         .pipe(server({
@@ -42,6 +44,14 @@ gulp.task("server", () => {
             port: 8080,
             livereload: true,
             middleware: [
+                // proxy("/api",{
+				// 	target:"http://localhost:3000",
+				// 	changeOrigin:true,
+				// }),
+				proxy('/search',{
+					target:'https://gatewx.dmall.com/',
+					changeOrigin:true
+				}),
                     proxy("/business", {
                         target: "https://wxcmsapi.dmall.com/weixin/home",
                         changeOrigin: true
@@ -128,6 +138,10 @@ gulp.task("watch", () => {
 })
 
 //默认任务，即直接输入gulp后，会执行的任务
+gulp.task("default",["packScss","packJs","copyHtml","copyImages","copyIconfont","copyLibs","server","watch"],()=>{
+	console.log("successful");
+})
+
 gulp.task("default", ["packScss", "packJs", "copyHtml", "copyImages", "copyIconfont", "copyLibs", "server", "watch"], () => {
     console.log("successful");
 })

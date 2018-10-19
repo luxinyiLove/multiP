@@ -11,8 +11,9 @@ const changeTab = ()=>{
     $(".nav>li").on("tap",function(){
         let hashs = ["#main","#classify","#member","#cart","#mine"];
         // 点击到不同的按钮时，将哈希值进行相应的赋值
-        location.hash = hashs[$(this).index()];
-        $(this).addClass('active').siblings().removeClass("active");
+            location.hash = hashs[$(this).index()];
+            $(this).addClass('active').siblings().removeClass("active");
+       
     })
 
 }

@@ -15,7 +15,8 @@ Router.prototype.route = function(hash,cb){
 
 //路由刷新
 Router.prototype.refresh = function(){
-    if(location.hash != "#location"){
+    if(location.hash != "##" || location.hash != "#search" || location.hash != "#searchCon" &&location.hash != "#location"){
+   
         let hash = location.hash || "#main";
         this.currentHash = hash;
         this.routes[this.currentHash]();

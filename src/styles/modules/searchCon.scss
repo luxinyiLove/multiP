@@ -1,0 +1,46 @@
+.search_con{
+    p{
+        display: flex;
+        justify-content: space-around;
+        line-height: .46rem;
+        border-bottom: .01rem solid #ccc;
+    }
+    ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li{
+            width: 50%;
+           height: 2.52rem;
+           display: flex;
+           justify-content: space-between;
+            img{              
+              width: 1.52rem;  
+            }
+             p{
+                 border-bottom: none;
+                 width: 100%;
+                 line-height: .2rem;
+                 display: flex;
+                 justify-content: flex-start;
+                 align-items: flex-start;
+             }
+              .addProduct{
+                justify-content: space-between;  
+               align-items: center;
+                .add_pro{
+                    display: inline-block;
+                    text-indent: 0;
+                    width: .24rem;
+                    line-height: .2rem;
+                    border: 1px solid red;
+                    font-size: .16rem;
+                    text-align: center;
+                     color: red;
+                     margin-right: .05rem;
+                }
+              }
+        }
+    }
+}
