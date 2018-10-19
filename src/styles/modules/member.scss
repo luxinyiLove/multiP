@@ -27,6 +27,9 @@
             @include flex-direction(column);
             @include justify-content(center);
             @include align-items(center);
+            >i {
+                font-size: .25rem;
+            }
         }
     }
     .menu_list {
