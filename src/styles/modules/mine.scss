@@ -39,6 +39,7 @@
             @include justify-content(space-between);
             >p {
                 font-size: .16rem;
+                color: white;
             }
             >div {
                 width: 0.94rem;
@@ -76,6 +77,9 @@
         >i {
             width: 0.34rem;
             height: .28rem;
+            font-size: .28rem;
+            text-align: center;
+            line-height: .28rem;
         }
     }
 }
@@ -104,6 +108,10 @@
         @include flex-direction(column);
         @include justify-content(center);
         @include align-items(center);
+        >i {
+            color: orangered;
+            font-size: .25rem;
+        }
     }
 }
 
@@ -146,5 +154,9 @@ h2 {
         @include justify-content(center);
         @include align-items(center);
         @include flex-direction(column);
+        >i {
+            color: orangered;
+            font-size: .25rem;
+        }
     }
 }
