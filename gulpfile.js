@@ -44,10 +44,10 @@ gulp.task("server", () => {
             port: 8080,
             livereload: true,
             middleware: [
-                proxy("/api",{
-					target:"http://localhost:3000",
-					changeOrigin:true,
-				}),
+                // proxy("/api",{
+				// 	target:"http://localhost:3000",
+				// 	changeOrigin:true,
+				// }),
 				proxy('/search',{
 					target:'https://gatewx.dmall.com/',
 					changeOrigin:true
@@ -78,13 +78,13 @@ gulp.task("server", () => {
                         target: "https://gatewx.dmall.com",
                         changeOrigin: true
                     }),
-                    // proxy('/api', {
-                    //     target: 'http://localhost:3000',
-                    //     changeOrigin: true,
-                    //     pathRewrite: {
-                    //         "^/api": ""
-                    //     }
-                    // })
+                    proxy('/api', {
+                        target: 'http://localhost:3000',
+                        changeOrigin: true,
+                        pathRewrite: {
+                            "^/api": ""
+                        }
+                    })
                     //Request URL: https://a.dmall.com/i/pageData?dshopStoreId=11491&actId=816&pageId=2330&token=83EB7F557CCF2635BB848552649E4DC9BF53CAC004E68C19B05722A1C4AA92F8177688A76B545E42B879004E4542F08F595A6DE9E36F8970AEEAE1FE4D2BDF92EEEB8AE7D81884C5F4FC70882CCD6ED5E241327666682DE04BD75E3AA1C60DDCDA0B1386915EAC1D525428531C293778A73BF32390D526B249F6E702FDC128D7&source=2&tempid=C82C1A2BD75000028C44114FC3801807&_=1539497626339
                 ]
                 // https://gatewx.dmall.com/user/memberTab?token=83EB7F557CCF2635BB848552649E4DC9BF53CAC004E68C19B05722A1C4AA92F8177688A76B545E42B879004E4542F08F595A6DE9E36F8970AEEAE1FE4D2BDF92EEEB8AE7D81884C5F4FC70882CCD6ED5E241327666682DE04BD75E3AA1C60DDCDA0B1386915EAC1D525428531C293778A73BF32390D526B249F6E702FDC128D7&

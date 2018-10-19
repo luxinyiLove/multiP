@@ -18,10 +18,8 @@ const imgList = async() => {
     for (var i = 0; i < imgObj.length; i++) {
         list = [...list, imgObj[i].data];
     }
-    console.log(list);
     let template = Handlebars.compile(memberImgTpl);
     let html = template({ list });
-    console.log(html)
     $(".img_area").html(html)
 
 }
