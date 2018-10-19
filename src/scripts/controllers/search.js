@@ -53,6 +53,7 @@ const history_s = ()=>{
         // $(".main .search_b").html("");
         // input.val($(this).text())
         // input.val(li_hos.eq($(this).index().val()));
+        localStorage.setItem($(this).text(),$(this).text());
         location.hash = "#searchCon";
     })
     li_hot.on("tap",function(){
