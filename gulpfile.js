@@ -44,10 +44,10 @@ gulp.task("server", () => {
             port: 8080,
             livereload: true,
             middleware: [
-                proxy("/api",{
-					target:"http://localhost:3000",
-					changeOrigin:true,
-				}),
+                // proxy("/api",{
+				// 	target:"http://localhost:3000",
+				// 	changeOrigin:true,
+				// }),
 				proxy('/search',{
 					target:'https://gatewx.dmall.com/',
 					changeOrigin:true

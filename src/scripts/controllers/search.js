@@ -11,7 +11,8 @@ const render =  ()=>{
 }
 
 // 判断keycode = enter跳转到searchCon内容
-
+var goods = {};
+var arr = [];
 $(document).on("keypress",(e)=>{
     var keyCode = e.which;
     var input = $(".search_t>input");
@@ -21,7 +22,33 @@ $(document).on("keypress",(e)=>{
             location.hash = "#searchCon";
             $(".main .search_c").html("");
             $(".main .search_b").html("");
-            localStorage.setItem(value,value);
+            goods.id = value;
+            goods.value = value;
+            if(localStorage.length>0){
+                for(var i = 0;i<localStorage.length;i++){
+                    var   key = localStorage.key(i);
+                       if(key == "search"){
+                        arr = JSON.parse(localStorage[key]);
+                        var bStop = false;
+                           for(var j = 0;j<arr.length;j++){
+                                if(arr[j].id == value){
+                                   
+                                }else{
+                                  
+                                }
+                           } 
+                       }else{
+                            arr.push(goods);
+                            localStorage.setItem("search",JSON.stringify(arr));
+                            break;
+                       }
+                   }
+            }else{
+                arr.push(goods);
+                localStorage.setItem("search",JSON.stringify(arr));
+            }
+          
+           
         }
        
    }
@@ -34,7 +61,15 @@ const addProduct = ()=>{
   var str = "";
     for(var i = 0;i<localStorage.length;i++){
         var key = localStorage.key(i);
-        str +=`<li>${localStorage[key]}</li>`;
+      
+        if(key == "search"){
+          
+         var value =JSON.parse( localStorage[key]);
+    
+            for(var j = 0;j<value.length;j++){
+                str +=`<li>${value[j].value}</li>`;
+            }
+        }
     }
     search_list.html(str);
 }
@@ -50,21 +85,42 @@ const history_s = ()=>{
     var input = $(".search_t>input");
     li_hos.on("tap",function(){
         $(".main").html(searchConTpl);
-        // $(".main .search_b").html("");
-        // input.val($(this).text())
-        // input.val(li_hos.eq($(this).index().val()));
         localStorage.setItem($(this).text(),$(this).text());
         location.hash = "#searchCon";
     })
     li_hot.on("tap",function(){
-        // $(".main .search_c").html("");
-        // $(".main .search_b").html("");
         $(".main").html(searchConTpl);
-        // input.val($(this).text())
-        // input.val(li_hos.eq($(this).index().val()));
+            var value = $(this).text();
+            goods.id = value;
+            goods.value = value;
+            if(localStorage.length>0){
+                for(var i = 0;i<localStorage.length;i++){
+                    var   key = localStorage.key(i);
+                       if(key == "search"){
+                        arr = JSON.parse(localStorage[key]);
+                        var bStop = false;
+                           for(var j = 0;j<arr.length;j++){
+                                if(arr[j].id == value){
+                                   
+                                }else{
+                                  
+                                }
+                           } 
+                       }else{
+                            arr.push(goods);
+                            localStorage.setItem("search",JSON.stringify(arr));
+                            break;
+                       }
+                   }
+            }else{
+                arr.push(goods);
+                localStorage.setItem("search",JSON.stringify(arr));
+            }
+          
+          
         location.hash = "#searchCon";
     })
-}
+}   
 
 // 点击返回键返回
 const ret = ()=>{

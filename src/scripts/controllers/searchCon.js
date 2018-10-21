@@ -38,8 +38,7 @@ const addClick = function () {
 
     const search_list = $("#search_list li .add_pro");
 
-    search_li.on("tap", function (e) {
-        var target = $(e.target);
+   
 
         search_li.on("tap", function (e) {
             var target = $(e.target);
@@ -64,7 +63,7 @@ const addClick = function () {
                     localStorage.setItem(target.parent().parent().attr("data-id"), 1);
                 }
             }
-        })
+        
     })
 
 

@@ -104,13 +104,14 @@ const banner = async ()=>{
         },
         // 如果需要分页器
         pagination: {
-        el: '.swiper-pagination',
-        clickable :true,
-        },
-        navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-        },
+            el: '.swiper-pagination',
+            clickable :true,
+        }
+        //左右按钮
+        // navigation: {
+        // nextEl: '.swiper-button-next',
+        // prevEl: '.swiper-button-prev'
+        // },
     })
 }
 

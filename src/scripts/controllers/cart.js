@@ -10,11 +10,9 @@ const render = async() => {
     buyNow();
 }
 
-
-//商品渲染?
+//商品渲染
 const renderList = async() => {
     var data = await cartModel.render();
-    console.log(data);
     var str = "";
     var str1 = $(".pro-list").html();
     for (var i = 0; i < data.length; i++) {
@@ -125,8 +123,6 @@ const operateNum = () => {
         var numVal = Number($(this).next().text());
         var _this = $(this);
         var id = $(this).next().attr("data-id");
-        console.log(id);
-
         if (numVal <= 1) {
             layer.open({
                 content: "是否删除该商品?",
@@ -150,7 +146,6 @@ const operateNum = () => {
                         $(".has-selected").css("display", "none");
                         $(".no-product").css("display", "flex");
                     }
-
                 }
             });
 
